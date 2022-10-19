@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - "sudo yum install -y yum-utils"
+      - "sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo"
+      - "sudo yum -y install terraform"
+    pre_build:
+      commands:
+        - terraform init
+        
+    build:
+      commands:
+        - terraform $TF_COMMAND -auto-approve
+        
+    post_build:
+      commands:
+        - echo terraform $TF_COMMAND completed on 'date'
