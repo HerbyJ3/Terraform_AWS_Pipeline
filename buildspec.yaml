@@ -3,8 +3,8 @@ version: 0.2
 phases:
   install:
     commands:
-      - "sudo yum clean all"
-      - "sudo yum update"
+      - "yum clean all"
+      - "yum update -y"
       - "sudo yum install -y yum-utils"
       - "sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo"
       - "sudo dnf install -y terraform"
