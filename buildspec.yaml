@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
-      - "export release=AmazonLinux
+      - "export release=AmazonLinux"
       - "sudo dnf install -y dnf-plugins-core"
       - "sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo"
       - "sudo dnf install -y terraform"
