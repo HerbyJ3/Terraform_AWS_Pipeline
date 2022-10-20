@@ -3,9 +3,9 @@ version: 0.2
 phases:
   install:
     commands:     
-      - "yum update -y"
       - "yum install -y yum-utils"
       - "yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo"
+      - "yum --disableplugin=priorities"
       - "yum -y install terraform"
     pre_build:
       commands:
