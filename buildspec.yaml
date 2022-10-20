@@ -9,9 +9,11 @@ phases:
         
   build:
     commands:
+      - export AWS_ACCESS_KEY_ID=$ACCESS
+      - export AWS_SECRET_ACCESS_KEY=$SECRET
       - terraform init
-      - terraform $TF_COMMAND --auto-approve
+      - terraform apply --auto-approve
         
   post_build:
     commands:
-      - echo terraform $TF_COMMAND completed on 'date'
+      - echo terraform $TF_COMMAND completed on '$date'
