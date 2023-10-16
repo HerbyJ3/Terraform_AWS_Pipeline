@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "aws-pipeline13579"
+    bucket = "aws-terraform-deployment"
     key    = "state/terraform.tfstate"
     region = "us-east-1"
   }
